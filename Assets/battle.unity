@@ -133,10 +133,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 231129948}
   - 50: {fileID: 231129947}
-  - 114: {fileID: 231129946}
   - 58: {fileID: 231129945}
   - 95: {fileID: 231129944}
-  - 114: {fileID: 231129949}
+  - 114: {fileID: 231129946}
   m_Layer: 10
   m_Name: enemy2
   m_TagString: Enemy
@@ -175,26 +174,14 @@ CircleCollider2D:
 --- !u!114 &231129946
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400000, guid: 66fe2da2077f94183ae003dde85a8b1a,
-    type: 2}
-  m_PrefabInternal: {fileID: 1466108402}
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 231129943}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef474d77e998d4890bff85103fb4c947, type: 3}
+  m_Script: {fileID: 11500000, guid: a9d79d6dff1879449b8c020995eb1a6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  HP: 2
-  deadEnemy: {fileID: 21300000, guid: 73fa5f80d4ddd4196b767cc01c1b5c68, type: 3}
-  damagedEnemy: {fileID: 21300000, guid: bc16422a503ec43cab4ad9ddab02ff7a, type: 3}
-  deathClips:
-  - {fileID: 8300000, guid: 039514349165244c6a43be5c3070d14b, type: 3}
-  - {fileID: 8300000, guid: 85020549641fa452d9136ac2fc852efd, type: 3}
-  - {fileID: 8300000, guid: 2e20b5071623f44cf9c72acf016de4b6, type: 3}
-  hundredPointsUI: {fileID: 100006, guid: 31974361bc9e44fb18c77b64a4cb3bbd, type: 2}
-  deathSpinMin: -100
-  deathSpinMax: 100
 --- !u!50 &231129947
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -226,18 +213,6 @@ Transform:
   - {fileID: 1920095222}
   m_Father: {fileID: 0}
   m_RootOrder: 2
---- !u!114 &231129949
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 231129943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cf28014941229841b4d877591537c85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 0}
 --- !u!1 &269590575
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,7 +428,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &383274847
@@ -715,7 +690,7 @@ GameObject:
   - 58: {fileID: 760544690}
   - 95: {fileID: 760544689}
   m_Layer: 10
-  m_Name: enemy1
+  m_Name: player
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -780,6 +755,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  gh: {fileID: 1273018373}
 --- !u!50 &760544692
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -816,7 +792,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1055711534}
-  - 114: {fileID: 1055711535}
   m_Layer: 0
   m_Name: ui_healthDisplay
   m_TagString: HealthBar
@@ -838,19 +813,6 @@ Transform:
   - {fileID: 375475608}
   m_Father: {fileID: 760544688}
   m_RootOrder: 5
---- !u!114 &1055711535
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400000, guid: af80fe7abb2604963b7e7b5a24685a6b,
-    type: 2}
-  m_PrefabInternal: {fileID: 1267573079}
-  m_GameObject: {fileID: 1055711533}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57aa01379d7e34884aeb85d875e17226, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  offset: {x: 0, y: 1.20000005, z: 0}
 --- !u!1 &1099655702
 GameObject:
   m_ObjectHideFlags: 0
@@ -919,7 +881,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1099655704
@@ -1022,7 +984,8 @@ Prefab:
       propertyPath: m_LocalScale.x
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11400000, guid: af80fe7abb2604963b7e7b5a24685a6b, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: af80fe7abb2604963b7e7b5a24685a6b, type: 2}
   m_RootGameObject: {fileID: 1920095221}
   m_IsPrefabParent: 0
@@ -1285,7 +1248,6 @@ GameObject:
   m_Component:
   - 224: {fileID: 1195235434}
   - 223: {fileID: 1195235437}
-  - 114: {fileID: 1195235436}
   - 114: {fileID: 1195235435}
   m_Layer: 5
   m_Name: Canvas
@@ -1308,7 +1270,7 @@ RectTransform:
   - {fileID: 1875829669}
   - {fileID: 383274845}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -1330,27 +1292,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &1195235436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1195235433}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1980459831, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
 --- !u!223 &1195235437
 Canvas:
   m_ObjectHideFlags: 0
@@ -1415,7 +1356,8 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: .344999909
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11400000, guid: af80fe7abb2604963b7e7b5a24685a6b, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: af80fe7abb2604963b7e7b5a24685a6b, type: 2}
   m_RootGameObject: {fileID: 1055711533}
   m_IsPrefabParent: 0
@@ -1447,6 +1389,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ad5d695231635346abff86d8a6e4011, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 760544691}
+  AI: {fileID: 231129946}
+  flash: {fileID: 1643502111}
 --- !u!4 &1273018374
 Transform:
   m_ObjectHideFlags: 0
@@ -1631,7 +1576,8 @@ Prefab:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11400000, guid: 66fe2da2077f94183ae003dde85a8b1a, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 66fe2da2077f94183ae003dde85a8b1a, type: 2}
   m_RootGameObject: {fileID: 231129943}
   m_IsPrefabParent: 0
@@ -1714,6 +1660,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 760544688}
   m_RootOrder: 4
+--- !u!1 &1643502111
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1643502113}
+  - 131: {fileID: 1643502112}
+  m_Layer: 0
+  m_Name: ScreenFlash
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!131 &1643502112
+GUITexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1643502111}
+  m_Enabled: 1
+  m_Texture: {fileID: 2800000, guid: c0d7bb19e6d7b400483d85741b495289, type: 3}
+  m_Color: {r: .95588237, g: .140570953, b: .140570953, a: 0}
+  m_PixelInset:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
+  m_LeftBorder: 0
+  m_RightBorder: 0
+  m_TopBorder: 0
+  m_BottomBorder: 0
+--- !u!4 &1643502113
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1643502111}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .469999999, y: .479999989, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
 --- !u!1 &1865544926
 GameObject:
   m_ObjectHideFlags: 0
@@ -1884,7 +1877,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1875829671
@@ -1972,7 +1965,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1920095222}
-  - 114: {fileID: 1920095223}
   m_Layer: 0
   m_Name: ui_healthDisplay
   m_TagString: HealthBar
@@ -1994,19 +1986,6 @@ Transform:
   - {fileID: 1159802490}
   m_Father: {fileID: 231129948}
   m_RootOrder: 2
---- !u!114 &1920095223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400000, guid: af80fe7abb2604963b7e7b5a24685a6b,
-    type: 2}
-  m_PrefabInternal: {fileID: 1102080002}
-  m_GameObject: {fileID: 1920095221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57aa01379d7e34884aeb85d875e17226, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  offset: {x: 0, y: 1.20000005, z: 0}
 --- !u!1 &1963977929
 GameObject:
   m_ObjectHideFlags: 0
